@@ -9,4 +9,5 @@ class FAppColor {
   static const Color fGrey = Color(0xFFF4F6F5);
   static const Color fGreenGrey = Color(0xFFEBF4F1);
   static const Color fBlue = Color(0xFF2A26DA);
+  static const Color fOrange = Color(0xFFde6752);
 }
