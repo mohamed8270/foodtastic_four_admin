@@ -3,7 +3,16 @@ import 'package:foodtastic_four_admin/utils/constants/pages.dart';
 import 'package:foodtastic_four_admin/utils/device/device_utility.dart';
 
 class BillUiRepo extends StatelessWidget {
-  const BillUiRepo({super.key});
+  const BillUiRepo({super.key, required this.orderToken, required this.orderId, required this.foodName, required this.foodType, required this.quantity, required this.price, required this.userName, required this.email});
+
+  final String orderToken;
+  final String orderId;
+  final String foodName;
+  final String foodType;
+  final String quantity;
+  final String price;
+  final String userName;
+  final String email;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +28,7 @@ class BillUiRepo extends StatelessWidget {
           width: size.width * 0.25,
           decoration: const BoxDecoration(color: FAppColor.fOrange, borderRadius: BorderRadius.horizontal(left: Radius.circular(13))),
           alignment: Alignment.center,
-          child: RotatedBox(quarterTurns: 3, child: Text('AR715', style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: FAppColor.fWhite, fontWeight: FontWeight.w700, letterSpacing: 1.5))),
+          child: RotatedBox(quarterTurns: 3, child: Text(orderToken, style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: FAppColor.fWhite, fontWeight: FontWeight.w700, letterSpacing: 1.5))),
         ),
         FAppSizes.spaceSm,
         // ticker order ID
@@ -28,7 +37,7 @@ class BillUiRepo extends StatelessWidget {
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text('Order ID', style: Theme.of(context).textTheme.labelMedium?.copyWith(color: FAppColor.fBlack.withOpacity(0.5))),
             FAppSizes.spaceXs,
-            Text('4gf5f62f5626dfy5g7246gh674', style: Theme.of(context).textTheme.labelMedium?.copyWith(color: FAppColor.fOrange, fontWeight: FontWeight.w600)),
+            Text(orderId, style: Theme.of(context).textTheme.labelMedium?.copyWith(color: FAppColor.fOrange, fontWeight: FontWeight.w600)),
             FAppSizes.spaceSm,
             // ordered food details
             Row(
@@ -40,7 +49,7 @@ class BillUiRepo extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Padding(
                     padding: const EdgeInsets.all(5.0),
-                    child: Text('South Indian', style: Theme.of(context).textTheme.labelSmall?.copyWith(color: FAppColor.fWhite, fontWeight: FontWeight.w600)),
+                    child: Text(foodType, style: Theme.of(context).textTheme.labelSmall?.copyWith(color: FAppColor.fWhite, fontWeight: FontWeight.w600)),
                   ),
                 )
               ],
@@ -48,18 +57,18 @@ class BillUiRepo extends StatelessWidget {
             FAppSizes.spaceXs,
             Text.rich(
               TextSpan(children: [
-                TextSpan(text: 'Chicken Biryani', style: Theme.of(context).textTheme.labelLarge),
+                TextSpan(text: foodName, style: Theme.of(context).textTheme.labelLarge),
                 TextSpan(text: '  x  ', style: Theme.of(context).textTheme.labelLarge),
-                TextSpan(text: '  2    ', style: Theme.of(context).textTheme.labelLarge),
-                TextSpan(text: '₹240', style: Theme.of(context).textTheme.labelLarge),
+                TextSpan(text: '  $quantity    ', style: Theme.of(context).textTheme.labelLarge),
+                TextSpan(text: '₹$price', style: Theme.of(context).textTheme.labelLarge),
               ]),
             ),
-            FAppSizes.spaceXl,
+            FAppSizes.spaceMd,
             // students details
             Text('Person details', style: Theme.of(context).textTheme.labelMedium?.copyWith(color: FAppColor.fBlack.withOpacity(0.5))),
             FAppSizes.spaceXs,
-            Text('Mohamed Ibrahim', style: Theme.of(context).textTheme.labelMedium),
-            Text('ibrahimrasith@gmail.com', style: Theme.of(context).textTheme.labelMedium),
+            Text(userName, style: Theme.of(context).textTheme.labelMedium),
+            Text(email, style: Theme.of(context).textTheme.labelMedium),
           ],),
         ),
       ],),
