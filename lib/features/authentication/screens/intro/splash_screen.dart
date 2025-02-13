@@ -12,16 +12,16 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FDeviceUtility.setStatusBarColor(FAppColor.fGreen, Brightness.light);
+    FDeviceUtility.setStatusBarColor(FAppColor.fWhite, Brightness.dark);
     return Scaffold(
-      backgroundColor: FAppColor.fGreen,
+      backgroundColor: FAppColor.fWhite,
       body: BlocListener<NavigationBloc, NavigationState>(
         listener: (context, state) {
           if(state is NavigateState) {
             context.go('/onboard');
           }
         },
-          child: Center(child: SvgPicture.asset(FAppImg.logo, height: 200, width: 200, colorFilter: const ColorFilter.mode(FAppColor.fWhite, BlendMode.srcIn),),)),
+          child: Center(child: SvgPicture.asset(FAppImg.logo, height: 200, width: 200, colorFilter: const ColorFilter.mode(FAppColor.fGreen, BlendMode.srcIn),),)),
     );
   }
 }
