@@ -23,4 +23,5 @@ class FAppImg {
   static String saladImg = 'assets/images/salad.png';
   static String noddlesImg = 'assets/images/noodles.webp';
   static String beveragesImg = 'assets/images/coke.png';
+  static String logoJpg = 'assets/images/logo.jpg';
 }
