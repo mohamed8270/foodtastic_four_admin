@@ -18,6 +18,7 @@ class FAppText {
   static const String signInNotAccount = "Don't have an account?";
 
   static const String signInTxt = 'Sign in';
+  static const String logOutTxt = 'Log out';
 
   static const String home = 'Home';
   static const String products = 'Dine';
@@ -37,6 +38,8 @@ class FAppText {
   static const String passLenError = 'Password must be at least 8 characters';
 
   static const String whatsSpecial = "What's new! 😋";
+  static const String menuItems = "Food menu 🤗";
+  static const String mealOfDay = "Meal of the day 😎";
   static const String heroH1 = 'Fulfill your';
   static const String heroH2 = ' comfort';
   static const String heroH3 = ' food cravings';
