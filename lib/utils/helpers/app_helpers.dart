@@ -44,4 +44,19 @@ class AppHelpers {
     // Default to a neutral color (e.g., grey) if neither veg nor non-veg is found
     return Colors.grey;
   }
+
+  // food price drop func
+  static double calculateOfferPrice(double originalPrice, double priceDropPercentage) {
+    if (originalPrice <= 0 || priceDropPercentage < 0 || priceDropPercentage > 100) {
+      return double.nan; // Return NaN for invalid input
+    }
+
+    // Rearrange the formula to solve for Offer Price:
+    // (Original Price - Offer Price) / Original Price * 100 = Price Drop Percentage
+    // (Original Price - Offer Price) = (Price Drop Percentage * Original Price) / 100
+    // Offer Price = Original Price - (Price Drop Percentage * Original Price) / 100
+    // Offer Price = Original Price * (1 - Price Drop Percentage / 100)
+
+    return originalPrice * (1 - priceDropPercentage / 100);
+  }
 }
