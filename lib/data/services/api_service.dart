@@ -20,6 +20,10 @@ abstract class ApiService {
   @POST('/staff/login')
   Future<void> logInStaff(@Body() Map<String, dynamic> body);
 
+  // 3) staff logout func
+  @GET('/staff/logout')
+  Future<Map<String, String>> logOutStaff();
+
   // 3) staff profile data
   @GET('/staff/profile')
   Future<UserRegisterModel> getStaffProfile(@Header('Authorization') String token);
