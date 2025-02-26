@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:foodtastic_four_admin/features/authentication/bloc/auto_navigate_bloc/auto_navigate_bloc.dart';
 import 'package:foodtastic_four_admin/features/authentication/bloc/auto_navigate_bloc/auto_navigate_state.dart';
 import 'package:foodtastic_four_admin/utils/constants/pages.dart';
@@ -21,7 +20,7 @@ class SplashScreen extends StatelessWidget {
             context.go('/onboard');
           }
         },
-          child: Center(child: SvgPicture.asset(FAppImg.logo, height: 200, width: 200, colorFilter: const ColorFilter.mode(FAppColor.fGreen, BlendMode.srcIn),),)),
+          child: Center(child: SizedBox(height: 280, width: 280, child: Image.asset(FAppImg.logoJpg, fit: BoxFit.contain, filterQuality: FilterQuality.high,)))),
     );
   }
 }
