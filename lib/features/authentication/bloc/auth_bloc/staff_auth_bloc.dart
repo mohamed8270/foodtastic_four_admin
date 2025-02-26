@@ -17,6 +17,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         final token = await authRepository.staffRegister(body);
         if(token!.isNotEmpty) {
           await LocalStorage.storeToken(token);
+          await LocalStorage.storeCounter(event.counterId.toString());
+          await LocalStorage.storeEmployeeId(event.employeeId.toString());
           emit(Authenticated(token: token));
         } else {
           emit(AuthError(error: 'Failed to register the user'));
