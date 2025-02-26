@@ -20,11 +20,12 @@ class LocalStorage {
     await storage.write(key: 'counterValue', value: counter);
   }
 
-  static Future<String?> counter() async {
+  // store employee id
+  static Future<void> storeEmployeeId(String employee) async {
     FlutterSecureStorage storage = const FlutterSecureStorage();
-    String? counter = await storage.read(key: 'counterValue');
-    return counter;
+    await storage.write(key: 'employeeValue', value: employee);
   }
+
 
   // get auth token
   static Future<String?> token() async {
@@ -32,5 +33,17 @@ class LocalStorage {
     String? token = await storage.read(key: 'authToken');
     AppLogger.info(token.toString());
     return token;
+  }
+
+  static Future<String?> counter() async {
+    FlutterSecureStorage storage = const FlutterSecureStorage();
+    String? counter = await storage.read(key: 'counterValue');
+    return counter;
+  }
+
+  static Future<String?> employee() async {
+    FlutterSecureStorage storage = const FlutterSecureStorage();
+    String? employee = await storage.read(key: 'employeeValue');
+    return employee;
   }
 }
