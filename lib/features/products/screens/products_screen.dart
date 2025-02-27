@@ -36,7 +36,7 @@ class ProductsScreen extends StatelessWidget {
                       physics: const AlwaysScrollableScrollPhysics(),
                       itemBuilder: (ctx, i) {
                       final data = state.foodOrders[i];
-                        return BillUiRepo(orderToken: data.orderToken, orderId: data.id, foodName: data.foodName, foodType: data.foodType, quantity: data.quantity.toString(), price: data.foodPrice.toString(), userName: data.userName, email: data.email);
+                        return BillUiRepo(orderToken: data.orderToken, orderId: data.id, foodName: data.foodName, foodType: data.foodType, quantity: data.quantity.toString(), price: data.foodPrice.toString(), userName: data.userName, email: data.email, foodId: data.foodId,);
                       }
                   );
                 } else if(state is LoadOrderLoading) {
@@ -66,7 +66,7 @@ class FoodOrderShimmer extends StatelessWidget {
         direction: ShimmerDirection.ltr,
         period: const Duration(seconds: 2),
         child: Container(height: size.height * 0.22,
-          width: size.width * 0.95, decoration: BoxDecoration(color: FAppColor.fWhite, borderRadius: BorderRadius.circular(5)),),
+          width: size.width * 0.95, decoration: BoxDecoration(color: FAppColor.fWhite, borderRadius: BorderRadius.circular(15)),),
       ),
     )),);
   }
