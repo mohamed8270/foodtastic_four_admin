@@ -11,6 +11,7 @@ import 'package:foodtastic_four_admin/features/authentication/bloc/auto_navigate
 import 'package:foodtastic_four_admin/features/authentication/bloc/auto_navigate_bloc/auto_navigate_event.dart';
 import 'package:foodtastic_four_admin/features/authentication/bloc/staff_logout/staff_logout_bloc.dart';
 import 'package:foodtastic_four_admin/features/products/blocs/dumb_food_data/dumb_food_bloc.dart';
+import 'package:foodtastic_four_admin/features/products/blocs/food_delivered/food_deliver_bloc.dart';
 import 'package:foodtastic_four_admin/features/products/blocs/food_remove/food_remove_bloc.dart';
 import 'package:foodtastic_four_admin/features/products/blocs/load_food_data/load_data_bloc.dart';
 import 'package:foodtastic_four_admin/features/products/blocs/load_food_order/load_order_bloc.dart';
@@ -45,6 +46,7 @@ class Wrapper extends StatelessWidget {
           BlocProvider(create: (context) => LoadOrderBloc(context.read<FoodOrderRepository>())),
           BlocProvider(create: (context) => FoodRemoveBloc(foodData)),
           BlocProvider(create: (context) => StaffLogoutBloc(authRepository)),
+          BlocProvider(create: (context) => FoodDeliverBloc(foodOrder))
         ],
         child: MaterialApp.router(
           title: 'Campus Craves',
