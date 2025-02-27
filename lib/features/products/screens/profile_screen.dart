@@ -71,7 +71,7 @@ class ProfileScreen extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             context.read<StaffLogoutBloc>().add(StaffLogout());
-                            context.go('login');
+                            context.go('/login');
                           },
                           child: Container(height: size.height * 0.06, width: size.width * 0.8,
                             decoration: BoxDecoration(color: FAppColor.fGreen, borderRadius: BorderRadius.circular(40)),
